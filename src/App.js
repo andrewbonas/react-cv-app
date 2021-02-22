@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import './styles/App.css';
 import General from "./components/General";
 import School from "./components/School";
+import Work from "./components/Work";
+
 
 
 const infoArray =[
@@ -22,15 +24,28 @@ const schoolArray =[
   }
 ];
 
+const workArray =[
+  {
+    name: '',
+    position:'',
+    location: '',
+    start: '',
+    finish: ''
+  }
+];
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       info:  infoArray,
-      academy: schoolArray
+      academy: schoolArray,
+      work: workArray
     };
     this.onSubmitInfo = this.onSubmitInfo.bind(this);
     this.onSubmitSchool= this.onSubmitSchool.bind(this);
+    this.onSubmitWork= this.onSubmitWork.bind(this);
+
   }
 
   handleChange = (e) => {
@@ -89,11 +104,43 @@ class App extends Component {
     });
   }
 
+  onSubmitWork = (e) => {
+    e.preventDefault();
+    const
+    { work } = this.state,
+    name = this.refs.name.value,
+    position = this.refs.position.value,
+    location = this.refs.location.value,
+    start = this.refs.start.value,
+    finish = this.refs.finish.value;
+
+
+    this.setState({
+      work: [...work, {
+        name,
+        position,
+        location,
+        start,
+        finish
+      }]
+    }, () => {
+      this.refs.name.value = '';
+      this.refs.position.value = '';
+      this.refs.location.value = '';
+      this.refs.start.value = '';
+      this.refs.finish.value = '';
+
+    });
+  }
   render() {
     const { info } = this.state;
     const { academy } = this.state;
+    const { work } = this.state;
+
     console.log('info', this.state.info);
     console.log('school', this.state.academy);
+    console.log('work', this.state.work);
+
 
 
   return (
@@ -120,6 +167,20 @@ class App extends Component {
 
     <button type="submit">
     add school
+    </button>
+    </form>
+
+    <Work work={work} />
+    <form onSubmit={this.onSubmitWork}>
+    <input type="text" ref="name" placeholder="name" />
+    <input type="text" ref="position" placeholder="position" />
+    <input type="text" ref="location" placeholder="location" />
+    <input type="text" ref="start" placeholder="start" />
+    <input type="text" ref="finish" placeholder="finish" />
+
+
+    <button type="submit">
+    add work
     </button>
     </form>
     </div>
