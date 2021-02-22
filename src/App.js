@@ -6,13 +6,13 @@ import Work from "./components/Work";
 
 
 
-const infoArray =[
+const infoArray =
   {
-    name: '',
+    user: '',
     email:'',
     phone: ''
   }
-];
+;
 
 const schoolArray =[
   {
@@ -57,18 +57,18 @@ class App extends Component {
     e.preventDefault();
     const
     { info } = this.state,
-    name = this.refs.name.value,
+    user = this.refs.user.value,
     email = this.refs.email.value,
     phone = this.refs.phone.value;
 
     this.setState({
-      info: [...info, {
-        name,
+      info:  {
+        user,
         email,
         phone
-      }]
+      }
     }, () => {
-      this.refs.name.value = '';
+      this.refs.user.value = '';
       this.refs.email.value = '';
       this.refs.phone.value = '';
     });
@@ -154,7 +154,7 @@ class App extends Component {
     <div>
     <General info={info} />
     <form onSubmit={this.onSubmitInfo}>
-    <input type="text" ref="name" placeholder="name" />
+    <input type="text" ref="user" placeholder="name" />
     <input type="text" ref="email" placeholder="email" />
     <input type="text" ref="phone" placeholder="phone" />
 

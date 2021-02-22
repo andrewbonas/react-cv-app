@@ -6,11 +6,11 @@ const General = (props) => {
 
   return (
     <ul>
-    {info.map((info) => {
-      if (info.name.length > 0 || info.name.length > 0 || info.email.length > 0) {
-      return <li key={uniqid()}>{`Name: ${info.name} Email: ${info.email} Phone: ${info.phone}`}</li>
-    }
-    })}
+
+
+    <li key={uniqid()}>{`Name: ${info.user} Email: ${info.email} Phone: ${info.phone}`}</li>
+
+
     </ul>
   );
 };
