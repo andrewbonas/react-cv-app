@@ -45,7 +45,6 @@ class App extends Component {
     this.onSubmitInfo = this.onSubmitInfo.bind(this);
     this.onSubmitSchool= this.onSubmitSchool.bind(this);
     this.onSubmitWork= this.onSubmitWork.bind(this);
-
   }
 
   handleChange = (e) => {
@@ -124,7 +123,7 @@ class App extends Component {
         finish
       }]
     }, () => {
-      this.refs.name.value = '';
+      this.refs.name.value = 'h';
       this.refs.position.value = '';
       this.refs.location.value = '';
       this.refs.start.value = '';
@@ -132,6 +131,14 @@ class App extends Component {
 
     });
   }
+
+  handleDelete = (index) => {
+    const newArr = [...this.state.work];
+    newArr.splice(index, 1);
+    this.setState({work: newArr});
+}
+
+
   render() {
     const { info } = this.state;
     const { academy } = this.state;
@@ -170,7 +177,7 @@ class App extends Component {
     </button>
     </form>
 
-    <Work work={work} />
+    <Work work={work} onDelete={this.handleDelete} />
     <form onSubmit={this.onSubmitWork}>
     <input type="text" ref="name" placeholder="name" />
     <input type="text" ref="position" placeholder="position" />
