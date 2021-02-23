@@ -1,17 +1,17 @@
 import React from "react";
-import uniqid from "uniqid";
 
 const General = (props) => {
   const { info } = props;
 
   return (
+    <div>
+    <h1>{info.user}</h1>
     <ul>
-
-
-    <li key={uniqid()}>{`Name: ${info.user} Email: ${info.email} Phone: ${info.phone}`}</li>
-
-
+    <li>{`Address: ${info.address}`}</li>
+    <li>{`Email: ${info.email} `}</li>
+    <li>{`Phone: ${info.phone}`}</li>
     </ul>
+    </div>
   );
 };
 

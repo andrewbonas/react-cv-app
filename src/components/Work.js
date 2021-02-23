@@ -5,15 +5,25 @@ const Work = (props) => {
   const { work, onDelete } = props;
 
   return (
+    <div>
+    <h2>work</h2>
     <ul>
     {work.map((job) => {
-      return <li key={uniqid()}>{`Work: ${job.name} Position: ${job.position} Location: ${job.location} Start: ${job.start} Finish: ${job.finish}`}
-      <button onClick={() => {onDelete()}}>Delete</button>
+      return <div key={uniqid()}>
+      <h3>{job.name}</h3>
+      <h4>{job.position}</h4>
+      <ul>
+      <li>{job.location}</li>
+      <li>{job.start} - {job.finish}</li>
+      </ul>
+      <div>{job.description}</div>
 
-        </li>
+      <button onClick={() => {onDelete()}}>Delete</button>
+        </div>
 
     })}
     </ul>
+    </div>
   );
 };
 

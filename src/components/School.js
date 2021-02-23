@@ -5,14 +5,25 @@ const School = (props) => {
   const { academy, onDelete } = props;
 
   return (
+    <div>
+    <h2>Education</h2>
     <ul>
     {academy.map((academy) => {
-      return <li key={uniqid()}>{`School: ${academy.school} Email: ${academy.location} Phone: ${academy.achievement}`}
+      return <div key={uniqid()}>
+      <h3>
+      {academy.school}
+      </h3>
+      <ul>
+      <li>{academy.location}</li>
+      <li>{academy.start} - {academy.finish}</li>
+      </ul>
+      <div>{academy.achievement}</div>
       <button onClick={() => {onDelete()}}>Delete</button>
-      </li>
+      </div>
 
     })}
     </ul>
+    </div>
   );
 };
 

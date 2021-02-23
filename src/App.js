@@ -7,6 +7,7 @@ import Work from "./components/Work";
 const infoArray =
   {
     user: '',
+    address: '',
     email:'',
     phone: ''
   }
@@ -27,6 +28,7 @@ const workArray =[
     name: '',
     position:'',
     location: '',
+    description: '',
     start: '',
     finish: ''
   }
@@ -59,12 +61,14 @@ class App extends Component {
     const
     { info } = this.state,
     user = this.refs.user.value,
+    address = this.refs.address.value,
     email = this.refs.email.value,
     phone = this.refs.phone.value;
 
     this.setState({
       info:  {
         user,
+        address,
         email,
         phone
       },
@@ -81,7 +85,6 @@ class App extends Component {
     achievement = this.refs.achievement.value,
     start = this.refs.start.value,
     finish = this.refs.finish.value;
-
 
     this.setState({
       academy: [...academy, {
@@ -110,6 +113,7 @@ class App extends Component {
     name = this.refs.name.value,
     position = this.refs.position.value,
     location = this.refs.location.value,
+    description = this.refs.description.value,
     start = this.refs.start.value,
     finish = this.refs.finish.value;
 
@@ -119,6 +123,7 @@ class App extends Component {
         name,
         position,
         location,
+        description,
         start,
         finish
       }],
@@ -162,8 +167,6 @@ openWorkForm = () => {
     console.log('school', this.state.academy);
     console.log('work', this.state.work);
 
-
-
   return (
     <div>
     <General info={info} />
@@ -172,9 +175,10 @@ openWorkForm = () => {
     </button>
     {showInfoForm &&
     <form onSubmit={this.onSubmitInfo}>
-    <input type="text" ref="user" placeholder="name" />
-    <input type="text" ref="email" placeholder="email" />
-    <input type="text" ref="phone" placeholder="phone" />
+    <input type="text" ref="user" placeholder="name" required/>
+    <input type="text" ref="address" placeholder="full address" required/>
+    <input type="email" ref="email" placeholder="email" required/>
+    <input type="tel" ref="phone" placeholder="phone" required/>
 
     <button type="submit">
     add info
@@ -188,11 +192,11 @@ openWorkForm = () => {
     </button>
     {showSchoolForm &&
     <form onSubmit={this.onSubmitSchool}>
-    <input type="text" ref="school" placeholder="school" />
-    <input type="text" ref="location" placeholder="location" />
-    <input type="text" ref="achievement" placeholder="achievement" />
-    <input type="text" ref="start" placeholder="start" />
-    <input type="text" ref="finish" placeholder="finish" />
+    <input type="text" ref="school" placeholder="school" required/>
+    <input type="text" ref="location" placeholder="location" required/>
+    <input type="text" ref="achievement" placeholder="achievement" required/>
+    <input type="date" ref="start" placeholder="start" required/>
+    <input type="date" ref="finish" placeholder="finish" required/>
 
     <button type="submit">
     add school
@@ -205,11 +209,12 @@ openWorkForm = () => {
     </button>
     {showWorkForm &&
     <form onSubmit={this.onSubmitWork}>
-    <input type="text" ref="name" placeholder="name" />
-    <input type="text" ref="position" placeholder="position" />
-    <input type="text" ref="location" placeholder="location" />
-    <input type="text" ref="start" placeholder="start" />
-    <input type="text" ref="finish" placeholder="finish" />
+    <input type="text" ref="name" placeholder="name" required/>
+    <input type="text" ref="position" placeholder="position" required/>
+    <input type="text" ref="location" placeholder="location" required/>
+    <input type="text" ref="description" placeholder="description" required/>
+    <input type="date" ref="start" placeholder="start" required/>
+    <input type="date" ref="finish" placeholder="finish" required/>
 
 
     <button type="submit">
