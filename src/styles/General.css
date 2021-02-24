@@ -1,0 +1,14 @@
+.info {
+  border-bottom: 2px solid rgb(65, 65, 66);
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  margin: 2px;
+}
+ .personal-info {
+   display: flex;
+   justify-content: space-around;
+   font-size: 10px;
+ }

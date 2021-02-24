@@ -1,0 +1,19 @@
+.work {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+
+.work h3 {
+  margin: 0;
+text-transform: uppercase;
+}
+
+.work h4 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.work-description {
+  margin: 5px 0;
+}

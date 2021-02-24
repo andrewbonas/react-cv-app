@@ -1,3 +1,84 @@
-h1 {
+html {
+  font-family: Georgia;
+}
+body {
+  background-color: rgb(208, 212, 212);
+}
+
+.no-bullet {
+  list-style-type: none;
+}
+.capitals {
+  text-transform: uppercase;
+}
+.capital {
+  text-transform: capitalize;
+}
+
+.text-right {
+  text-align: right;
+}
+#root {
+  margin: auto;
+  min-height: 620px;
+  width: 500px;
+  background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
+ box-shadow:
+   0 1px 1px rgba(0,0,0,0.15),
+   0 10px 0 -5px #eee,
+   0 10px 1px -4px rgba(0,0,0,0.15),
+   0 20px 0 -10px #eee,
+   0 20px 1px -9px rgba(0,0,0,0.15);
+   padding: 30px;
+}
+
+.form-button-cont {
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+}
+
+ button {
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+background-color:#f9f9f9;
+border-radius:5px;
+border:1px solid #dcdcdc;
+cursor:pointer;
+padding:3px 12px;
+}
+
+ button:hover {
+  background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color:#e9e9e9;
+}
+
+.remove-button-ctn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.remove-button-ctn button {
   color: red;
+}
+form {
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgb(230, 230, 230);
+}
+input, textarea {
+  padding: 5px;
+  margin: 5px;
+  width: 95%;
+  border-radius: 5px;
+  border: none;
+}
+
+form button {
+  text-align: center;
+    display: block;
+    margin: 5px auto;
 }

@@ -1,0 +1,13 @@
+.school {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+
+.school h3 {
+  margin: 0;
+}
+
+.school-achievement {
+  padding-left: 20px;
+}

@@ -3,34 +3,35 @@ import './styles/App.css';
 import General from "./components/General";
 import School from "./components/School";
 import Work from "./components/Work";
+import RichTextEditor from 'react-rte';
 
 const infoArray =
   {
     user: '',
-    address: '',
-    email:'',
-    phone: ''
+    address: '123 somwhere,BC',
+    email:'email@email.com',
+    phone: '888-222-222'
   }
 ;
 
 const schoolArray =[
   {
-    school: '',
-    location:'',
-    achievement: '',
-    start: '',
-    finish: ''
+    school: 'Code Secondary',
+    location:'Vancouver',
+    achievement: 'Diploma',
+    start: 'June 2011',
+    finish: 'June 2012'
   }
 ];
 
 const workArray =[
   {
-    name: '',
-    position:'',
-    location: '',
-    description: '',
-    start: '',
-    finish: ''
+    name: 'Lorem ipsum',
+    position:'Manager',
+    location: 'London',
+    description: 'lorem ipsum doler',
+    start: 'june 2012',
+    finish: 'march 2202'
   }
 ];
 
@@ -170,9 +171,11 @@ openWorkForm = () => {
   return (
     <div>
     <General info={info} />
+    <div className="form-button-cont">
     <button onClick={this.openInfoForm}>
-     {showInfoForm ? 'Close Form' : 'Add Info'}
+     {showInfoForm ? 'Close Form' : 'Add/Update Info'}
     </button>
+    </div>
     {showInfoForm &&
     <form onSubmit={this.onSubmitInfo}>
     <input type="text" ref="user" placeholder="name" required/>
@@ -187,9 +190,11 @@ openWorkForm = () => {
 }
 
     <School academy={academy} onDelete={this.handleDeleteSchool} />
+    <div className="form-button-cont">
     <button onClick={this.openSchoolForm}>
      {showSchoolForm ? 'Close Form' : 'Add School'}
     </button>
+    </div>
     {showSchoolForm &&
     <form onSubmit={this.onSubmitSchool}>
     <input type="text" ref="school" placeholder="school" required/>
@@ -197,26 +202,25 @@ openWorkForm = () => {
     <input type="text" ref="achievement" placeholder="achievement" required/>
     <input type="date" ref="start" placeholder="start" required/>
     <input type="date" ref="finish" placeholder="finish" required/>
-
     <button type="submit">
     add school
     </button>
     </form>
 }
     <Work work={work} onDelete={this.handleDeleteWork} />
+    <div className="form-button-cont">
     <button onClick={this.openWorkForm}>
      {showWorkForm ? 'Close Form' : 'Add Work'}
     </button>
+    </div>
     {showWorkForm &&
     <form onSubmit={this.onSubmitWork}>
     <input type="text" ref="name" placeholder="name" required/>
     <input type="text" ref="position" placeholder="position" required/>
     <input type="text" ref="location" placeholder="location" required/>
-    <input type="text" ref="description" placeholder="description" required/>
     <input type="date" ref="start" placeholder="start" required/>
     <input type="date" ref="finish" placeholder="finish" required/>
-
-
+    <textarea type="text" ref="description" placeholder="description" required/>
     <button type="submit">
     add work
     </button>
