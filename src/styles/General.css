@@ -7,8 +7,9 @@
   justify-content: center;
   margin: 2px;
 }
- .personal-info {
-   display: flex;
-   justify-content: space-around;
-   font-size: 10px;
- }
+
+.personal-info {
+  display: flex;
+  justify-content: space-around;
+  font-size: 10px;
+}

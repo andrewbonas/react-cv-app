@@ -6,7 +6,7 @@
 
 .work h3 {
   margin: 0;
-text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .work h4 {
@@ -16,4 +16,9 @@ text-transform: uppercase;
 
 .work-description {
   margin: 5px 0;
+}
+
+.delete-work {
+  position: relative;
+  top: -30px;
 }
